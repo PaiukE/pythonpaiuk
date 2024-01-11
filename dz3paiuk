@@ -1,0 +1,35 @@
+class Human:
+    def __init__(self, name = "Human"):
+        self.name = name
+
+class bus:
+    def __init__(self, brand):
+        self.brand = brand
+        self.passengers = []
+    def add_passenger(self,human):
+        self.passengers.append(human)
+
+    def print_passengers(self):
+        if self.passengers != []:
+            print(f"Name of brand - {self.brand} , passengers:")
+            for passenger in self.passengers:
+                print(passenger.name)
+        else:
+            print(f"Name of brand - {self.brand}")
+    def sub_passenger(self, number = 0):
+        if self.passengers != []:
+            if number < len(self.passengers):
+                self.passengers.pop(number)
+            else:
+                self.passengers.pop()
+bus1 = bus("bus")
+h1 = Human("lisa")
+h2 = Human("stesy")
+h3 = Human("maks")
+bus1.add_passenger(h1)
+bus1.add_passenger(h2)
+bus1.print_passengers()
+bus1.add_passenger(h3)
+bus1.print_passengers()
+bus1.sub_passenger(18)
+bus1.print_passengers()
